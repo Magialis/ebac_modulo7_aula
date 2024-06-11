@@ -25,7 +25,7 @@ form.addEventListener('submit', function(e) {
 
     formEValido = validaNome(nomeBeneficiario.value)
     if (formEValido) {
-        const containerMensagemSucesso = document.querySelector('.mensagem-sucesso');
+        const containerMensagemSucesso = document.querySelector('.success-message');
         containerMensagemSucesso.innerHTML = mensagemSucesso;
         containerMensagemSucesso.sytle.display = 'block';
 
@@ -34,7 +34,7 @@ form.addEventListener('submit', function(e) {
         valorDeposito.value = '';
     } else {
         nomeBeneficiario.style.border = '1px solid red';
-        document.querySelector('.mensagem-erro').style.display = 'block';
+        document.querySelector('.error-message').style.display = 'block';
     }
 })
 
@@ -45,9 +45,9 @@ nomeBeneficiario.addEventListener('keyup', function(e) {
 
     if (!formEValido) { 
         nomeBeneficiario.classList.add('error');
-        document.querySelector('.mensagem-erro').style.display = 'block';
+        document.querySelector('.error-message').style.display = 'block';
     } else {
         nomeBeneficiario.classList.remove('error');
-        document.querySelector('.mensagem-erro').style.display = 'none';
+        document.querySelector('.error-message').style.display = 'none';
     }
 })
