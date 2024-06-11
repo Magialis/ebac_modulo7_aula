@@ -38,14 +38,14 @@ button:hover {
     background-color: #27ae60;
 }
 
-.mensagem-sucesso {
+.success-message {
     background-color: #27ae60;
     padding: 16px;
     color: #fff;
     display: none;
 }
 
-.mensagem-erro {
+.error-message {
     font-size: 12px;
     padding: 8px;
     background-color: red;
