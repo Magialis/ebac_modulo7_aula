@@ -4,16 +4,8 @@ let formEValido = false;
 
 function validaNome(nomeCompleto) {
     const nomeComoArray = nomeCompleto.split(' ');
-    let formEValido = false;
-    for (let i = 0; i < nomeComoArray.length; i++) {
-        if (nomeComoArray[i].length >=1) {
-            formEValido = true;
-        } else {
-            formEValido = false;
-            break;
-        }
-    }
-    return nomeComoArray.length >= 2 && formEValido;
+    const nomeFiltrado = nomeComoArray.filter((nome) => nome.length > 1);
+    return nomeFiltrado.length >= 2;
 }
 
 form.addEventListener('submit', function(e) {
@@ -27,7 +19,7 @@ form.addEventListener('submit', function(e) {
     if (formEValido) {
         const containerMensagemSucesso = document.querySelector('.success-message');
         containerMensagemSucesso.innerHTML = mensagemSucesso;
-        containerMensagemSucesso.sytle.display = 'block';
+        containerMensagemSucesso.style.display = 'block';
 
         nomeBeneficiario.value = '';
         numeroContaBeneficiario.value = '';
